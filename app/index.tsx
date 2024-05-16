@@ -11,6 +11,7 @@ import { data } from '../constants/data';
 
 export default function Index() {
   const [news, setNews] = useState([]);
+  const [categorySelected, setCategorySelected] = useState('All');
 
   const fakeNews = data.results;
   const breakingNewsArticles = data.results.slice(0, 3);
@@ -39,7 +40,10 @@ export default function Index() {
         </View>
         <Text className='text-xl text-text_primary'>Breaking News</Text>
         <BreakingNews news={breakingNewsArticles} />
-        <CategoryList />
+        <CategoryList
+          setCategorySelected={setCategorySelected}
+          categorySelected={categorySelected}
+        />
       </ScrollView>
     </SafeAreaView>
   );

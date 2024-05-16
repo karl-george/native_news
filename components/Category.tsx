@@ -1,10 +1,21 @@
-import { View, Text } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 
-const Category = ({ item }) => {
+interface Props {
+  item: string;
+  setCategorySelected: Function;
+  categorySelected: string;
+}
+
+const Category = ({ item, setCategorySelected, categorySelected }: Props) => {
   return (
-    <View className='px-4 py-2 my-5 mr-2 rounded-md bg-card'>
+    <TouchableOpacity
+      onPress={() => setCategorySelected(item)}
+      className={`px-4 py-2 my-5 mr-2 rounded-md ${
+        categorySelected === item ? 'bg-accent' : 'bg-card'
+      }`}
+    >
       <Text className='capitalize text-text_primary'>{item}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
