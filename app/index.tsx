@@ -1,10 +1,10 @@
 import BreakingNews from '@/components/BreakingNews';
+import CategoryList from '@/components/CategoryList';
 import SearchInput from '@/components/SearchInput';
 import { useEffect, useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { data } from '../constants/data';
-import Categories from '@/components/Categories';
 
 // TODO: Create a constants/data file and put in the results from the api call so as to not use all the free tokens/requests.
 // TODO: Then pass the constant data into the breaking news component
@@ -39,7 +39,7 @@ export default function Index() {
         </View>
         <Text className='text-xl text-text_primary'>Breaking News</Text>
         <BreakingNews news={breakingNewsArticles} />
-        <Categories />
+        <CategoryList />
       </ScrollView>
     </SafeAreaView>
   );
