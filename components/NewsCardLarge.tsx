@@ -8,8 +8,8 @@ const NewsCardLarge = ({ newsArticle }: NewsArticle) => {
   const { title, description, image_url, source_id, pubDate } = newsArticle;
 
   return (
-    <Animatable.View className='mr-3'>
-      <View className='w-[250px] h-[332px] p-3 rounded-md bg-card space-y-3'>
+    <Animatable.View className='mt-2 mr-3'>
+      <View className='w-[250px] h-[334px] p-3 rounded-md bg-card space-y-3'>
         <View>
           <Image
             src={image_url}
@@ -18,7 +18,7 @@ const NewsCardLarge = ({ newsArticle }: NewsArticle) => {
           />
         </View>
         <View className='h-[140px] justify-between'>
-          <Text className='text-text_primary'>{title.substring(0, 40)}...</Text>
+          <Text className='text-text_primary'>{title.substring(0, 80)}...</Text>
           <Text className='text-text_secondary'>
             {description.substring(0, 90)}...
           </Text>
