@@ -1,4 +1,4 @@
-results: [
+export const results = [
   {
     article_id: '16f5c56c3a299acf5f10b093aec39a9f',
     title: `Quand Blinken joue du Neil Young à Kiev en soutien à l'Ukraine`,
@@ -17,7 +17,7 @@ results: [
     source_icon: 'https://i.bytvi.com/domain_icons/lesteclair.jpg',
     language: 'french',
     country: ['france'],
-    category: [top],
+    category: ['top'],
     ai_tag: '',
     sentiment: '',
     sentiment_status: '',
