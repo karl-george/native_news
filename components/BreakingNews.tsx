@@ -2,10 +2,11 @@ import { View, Text } from 'react-native';
 import React from 'react';
 import NewsCardLarge from './NewsCardLarge';
 
-const BreakingNews = () => {
+// TODO: Fix this type
+const BreakingNews = (news: any) => {
   return (
     <View>
-      <NewsCardLarge />
+      <NewsCardLarge news={news} />
     </View>
   );
 };

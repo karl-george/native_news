@@ -1,8 +1,9 @@
 import { View, Text, Image } from 'react-native';
 
-const NewsCardLarge = () => {
+// TODO: Fix this type
+const NewsCardLarge = (news: any) => {
   return (
-    <View className='rounded-md bg-card'>
+    <View className='mt-2 rounded-md bg-card'>
       <Image className='w-[175px] h-[150px]' />
       <View>
         <Text className='text-text_primary'>Headline</Text>
