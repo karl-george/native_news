@@ -1,10 +1,11 @@
+import { postedAt } from '@/lib/utils';
 import { NewsArticle } from '@/typings';
 import { View, Text, Image } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 
 // TODO: Fix this type
 const NewsCardLarge = ({ newsArticle }: NewsArticle) => {
-  const { title, description, image_url, source_id } = newsArticle;
+  const { title, description, image_url, source_id, pubDate } = newsArticle;
 
   return (
     <Animatable.View className='mt-2 mr-5 rounded-md bg-card w-[250px] h-full'>
@@ -22,7 +23,9 @@ const NewsCardLarge = ({ newsArticle }: NewsArticle) => {
           <Text className='text-[10px] text-text_primary'>
             {source_id.toUpperCase()}
           </Text>
-          <Text className='text-[10px] text-text_primary'>Date</Text>
+          <Text className='text-[10px] text-text_primary'>
+            {postedAt(pubDate)}
+          </Text>
         </View>
       </View>
     </Animatable.View>
