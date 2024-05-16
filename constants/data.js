@@ -267,3 +267,16 @@ export const data = {
   ],
   nextPage: '1715803133784262015',
 };
+
+export const categories = [
+  'All',
+  'business',
+  'entertainment',
+  'food',
+  'health',
+  'politics',
+  'science',
+  'sports',
+  'technology',
+  'world',
+];
