@@ -1,6 +1,6 @@
 import { postedAt } from '@/lib/utils';
 import { NewsArticle } from '@/typings';
-import { View, Text, Image } from 'react-native';
+import { Image, Text, View } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 
 // TODO: Fix this type
@@ -22,7 +22,7 @@ const NewsCardLarge = ({ newsArticle }: NewsArticle) => {
             {title.substring(0, 40)}...
           </Text>
           <Text className='text-sm leading-4 text-text_secondary'>
-            {description.substring(0, 90)}...
+            {description && description.substring(0, 90)}...
           </Text>
           <View className='flex-row justify-between'>
             <Text className='text-xs text-text_primary'>{source_id}</Text>
