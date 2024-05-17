@@ -2,6 +2,7 @@ import BreakingNews from '@/components/BreakingNews';
 import CategoryList from '@/components/CategoryList';
 import NewsList from '@/components/NewsList';
 import SearchInput from '@/components/SearchInput';
+import { Link } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -65,9 +66,19 @@ export default function Index() {
         {loading ? (
           <Text>Loading...</Text>
         ) : categorySelected === 'All' || categorySelected === '' ? (
-          <NewsList newsArticles={latestNews.slice(4)} />
+          <View>
+            <Link href={`/category/top`}>
+              <Text className='text-text_primary'>See More</Text>
+            </Link>
+            <NewsList newsArticles={latestNews.slice(4)} />
+          </View>
         ) : (
-          <NewsList newsArticles={news} />
+          <View>
+            <Link href={`/category/${categorySelected}`}>
+              <Text className='text-text_primary'>See More</Text>
+            </Link>
+            <NewsList newsArticles={news} />
+          </View>
         )}
       </ScrollView>
     </SafeAreaView>
