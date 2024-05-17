@@ -28,7 +28,6 @@ export default function Index() {
       );
       const res = await response.json();
       setLatestNews(res.results);
-
     } catch (error) {
       console.error(error);
     } finally {
@@ -53,26 +52,24 @@ export default function Index() {
 
   return (
     <SafeAreaView className='h-full px-4 bg-primary'>
-      {loading ? (
-        <Text>Loading...</Text>
-      ) : (
-        <ScrollView>
-          <View className='items-center justify-center'>
-            <SearchInput />
-          </View>
-          <Text className='text-xl text-text_primary'>Breaking News</Text>
-          <BreakingNews news={latestNews.slice(0, 3)} />
-          <CategoryList
-            setCategorySelected={setCategorySelected}
-            categorySelected={categorySelected}
-          />
-          {categorySelected === 'All' || categorySelected === '' ? (
-            <NewsList newsArticles={latestNews.slice(4)} />
-          ) : (
-            <NewsList newsArticles={news} />
-          )}
-        </ScrollView>
-      )}
+      <ScrollView>
+        <View className='items-center justify-center'>
+          <SearchInput />
+        </View>
+        <Text className='text-xl text-text_primary'>Breaking News</Text>
+        <BreakingNews news={latestNews.slice(0, 3)} />
+        <CategoryList
+          setCategorySelected={setCategorySelected}
+          categorySelected={categorySelected}
+        />
+        {loading ? (
+          <Text>Loading...</Text>
+        ) : categorySelected === 'All' || categorySelected === '' ? (
+          <NewsList newsArticles={latestNews.slice(4)} />
+        ) : (
+          <NewsList newsArticles={news} />
+        )}
+      </ScrollView>
     </SafeAreaView>
   );
 }
