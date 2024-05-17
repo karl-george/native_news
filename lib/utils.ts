@@ -16,5 +16,8 @@ export const postedAt = (time: string) => {
   } else if (diff < 3600 * 24 * 1000) {
     // It was posted X hours ago
     return Math.floor(diff / (3600 * 1000)) + ' hours ago';
+  } else if (diff >= 3600 * 24 * 1000) {
+    // It was posted X days ago
+    return Math.floor(diff / (3600 * 24 * 1000)) + ' days ago';
   }
 };
