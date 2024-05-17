@@ -5,9 +5,7 @@ import { useEffect, useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { data } from '../constants/data';
-
-// TODO: Create a constants/data file and put in the results from the api call so as to not use all the free tokens/requests.
-// TODO: Then pass the constant data into the breaking news component
+import NewsList from '@/components/NewsList';
 
 export default function Index() {
   const [news, setNews] = useState([]);
@@ -15,6 +13,7 @@ export default function Index() {
 
   const fakeNews = data.results;
   const breakingNewsArticles = data.results.slice(0, 3);
+  const newsArticles = data.results.slice(4);
 
   const fetchData = async () => {
     try {
@@ -44,6 +43,7 @@ export default function Index() {
           setCategorySelected={setCategorySelected}
           categorySelected={categorySelected}
         />
+        <NewsList newsArticles={newsArticles} />
       </ScrollView>
     </SafeAreaView>
   );
