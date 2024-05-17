@@ -1,4 +1,4 @@
-import { News, NewsList } from '@/typings';
+import { NewsList } from '@/typings';
 import { FlatList } from 'react-native';
 import NewsCardLarge from './NewsCardLarge';
 
